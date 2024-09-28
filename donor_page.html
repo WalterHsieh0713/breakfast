@@ -26,15 +26,101 @@
 
         <section class="section donate-now">
             <h2><i class="fas fa-donate"></i> 立即捐款</h2>
-            <a href="#" class="donate-button">捐款支持</a>
             <p>我們接受一次性或定期捐款，您每一筆捐款都將被妥善管理，並定期更新資金使用情況。</p>
             <div class="donation-options">
-                <button class="donation-amount">NT$100</button>
-                <button class="donation-amount">NT$500</button>
-                <button class="donation-amount">NT$1,000</button>
-                <button class="donation-amount">其他金額</button>
+                <button class="donation-amount" onclick="processDonation(100)">NT$100</button>
+                <button class="donation-amount" onclick="processDonation(500)">NT$500</button>
+                <button class="donation-amount" onclick="processDonation(1000)">NT$1,000</button>
+                <button class="donation-amount" onclick="processDonation('custom')">其他金額</button>
             </div>
         </section>
+        
+        <script>
+            function processDonation(amount) {
+                if (amount === 'custom') {
+                    // Prompt user for a custom donation amount
+                    amount = prompt("請輸入您想捐款的金額", "1000");
+                    if (!amount || isNaN(amount) || amount <= 0) {
+                        alert("請輸入有效的金額");
+                        return;
+                    }
+                }
+        
+                // Prepare the ECPay form submission
+                const form = document.createElement('form');
+                form.method = 'POST';
+                form.action = 'https://payment-stage.ecpay.com.tw/Cashier/AioCheckOut/V5'; // Staging URL for testing
+        
+                // Get current date in the correct format: yyyy/MM/dd HH:mm:ss
+                const now = new Date();
+                const merchantTradeDate = `${now.getFullYear()}/${(now.getMonth() + 1).toString().padStart(2, '0')}/${now.getDate().toString().padStart(2, '0')} ${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}:${now.getSeconds().toString().padStart(2, '0')}`;
+        
+                // Add necessary fields for ECPay
+                const fields = {
+                    MerchantID: '3002607',
+                    MerchantTradeNo: 'TRADE' + new Date().getTime(), // Unique order number
+                    MerchantTradeDate: merchantTradeDate,
+                    PaymentType: 'aio',
+                    TotalAmount: amount,
+                    TradeDesc: 'Donation to Breakfast Program',
+                    ItemName: 'Donation',
+                    ReturnURL: 'https://yourwebsite.com/return', // Replace with your return URL for testing
+                    ChoosePayment: 'ALL',
+                    EncryptType: 1
+                };
+        
+                // Append the fields to the form
+                for (const key in fields) {
+                    if (fields.hasOwnProperty(key)) {
+                        const hiddenField = document.createElement('input');
+                        hiddenField.type = 'hidden';
+                        hiddenField.name = key;
+                        hiddenField.value = fields[key];
+                        form.appendChild(hiddenField);
+                    }
+                }
+        
+                // Generate the CheckMacValue (checksum)
+                const checkValueStr = generateCheckMacValue(fields);
+                const checkMacField = document.createElement('input');
+                checkMacField.type = 'hidden';
+                checkMacField.name = 'CheckMacValue';
+                checkMacField.value = checkValueStr;
+                form.appendChild(checkMacField);
+        
+                document.body.appendChild(form);
+                form.submit();
+            }
+        
+            function generateCheckMacValue(fields) {
+                // Sort the fields in ASCII order and generate the raw string
+                const keys = Object.keys(fields).sort();
+                let rawString = 'HashKey=pwFHCqoQZGmho4w6&';
+                keys.forEach(key => {
+                    rawString += `${key}=${fields[key]}&`;
+                });
+                rawString += 'HashIV=EkRm7iFT261dpevs';
+        
+                // Replace special characters
+                rawString = rawString.toLowerCase().replace(/%20/g, '+').replace(/!/g, '%21')
+                            .replace(/\(/g, '%28').replace(/\)/g, '%29').replace(/\*/g, '%2a');
+        
+                // Generate MD5 hash
+                return md5(rawString).toUpperCase();
+            }
+        
+            function md5(string) {
+                // Use a JavaScript MD5 library like CryptoJS
+                return CryptoJS.MD5(string).toString();
+            }
+        </script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+        
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+        
+        
 
         <section class="section donor-list">
             <h2><i class="fas fa-trophy"></i> 捐款者榮譽榜</h2>
