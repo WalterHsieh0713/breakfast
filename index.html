@@ -1,43 +1,61 @@
----
-layout: default
-title: 首頁
----
-
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@jekyll-themes/architect@0.1.1/assets/css/style.css">
-    <title>早餐公益輔助計畫 - 首頁</title>
+    <title>早餐公益輔助計畫 - 溫暖的一天從這裡開始</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 </head>
 <body>
+    <header>
+        <h1><i class="fas fa-sun"></i> 早餐公益輔助計畫</h1>
+        <p class="tagline">溫暖的一天從這裡開始</p>
+    </header>
 
-<header>
-    <h1>早餐公益輔助計畫</h1>
-</header>
+    <nav>
+        <a href="./donor_page.html"><i class="fas fa-hand-holding-heart"></i> 捐款者專區</a>
+        <a href="./breakfast_store_page.html"><i class="fas fa-store"></i> 合作早餐店專區</a>
+        <a href="./beneficiary_page.html"><i class="fas fa-users"></i> 受惠者專區</a>
+    </nav>
 
-<nav>
-    <a href="./donor_page.html">捐款者專區</a>
-    <a href="./breakfast_store_page.html">合作早餐店專區</a>
-    <a href="./beneficiary_page.html">受惠者專區</a>
-</nav>
+    <main>
+        <section class="section intro">
+            <h2><i class="fas fa-info-circle"></i> 關於早餐公益輔助計畫</h2>
+            <p>我們致力於通過募集資金，幫助有需要的社區成員享用免費早餐。我們與本地的早餐店合作，提供每日的免費餐點，確保每個人都能享用健康的早餐。</p>
+        </section>
 
-<div class="container">
-    <section class="intro">
-        <h2>關於早餐公益輔助計畫</h2>
-        <p>我們致力於通過募集資金，幫助有需要的社區成員享用免費早餐。我們與本地的早餐店合作，提供每日的免費餐點，確保每個人都能享用健康的早餐。</p>
-    </section>
+        <section class="section mission">
+            <h2><i class="fas fa-bullseye"></i> 我們的使命</h2>
+            <p>讓更多人擁有開始一天的美好餐點，透過社會捐款與當地商家合作，我們希望能夠達成這個目標。</p>
+        </section>
 
-    <section class="mission">
-        <h2>我們的使命</h2>
-        <p>讓更多人擁有開始一天的美好餐點，透過社會捐款與當地商家合作，我們希望能夠達成這個目標。</p>
-    </section>
-</div>
+        <section class="section impact">
+            <h2><i class="fas fa-chart-line"></i> 我們的影響</h2>
+            <div class="impact-stats">
+                <div class="stat">
+                    <i class="fas fa-utensils fa-3x"></i>
+                    <p>每月提供<br><strong>10,000+</strong><br>份早餐</p>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-store fa-3x"></i>
+                    <p>合作<br><strong>50+</strong><br>家早餐店</p>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-smile fa-3x"></i>
+                    <p>幫助<br><strong>1,000+</strong><br>名受惠者</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
-<footer>
-    <p>© 2024 早餐公益輔助計畫. 保留所有權利。</p>
-</footer>
-
+    <footer>
+        <p>© 2024 早餐公益輔助計畫. 保留所有權利。</p>
+        <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+    </footer>
 </body>
 </html>

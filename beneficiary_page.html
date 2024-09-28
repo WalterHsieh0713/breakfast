@@ -1,46 +1,94 @@
----
-layout: default
-title: 受惠者專區
----
-
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>受惠者專區 - 早餐公益輔助計畫</title>
+    <title>早餐公益輔助計畫 - 受惠者專區</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 </head>
 <body>
+    <header>
+        <h1><i class="fas fa-users"></i> 受惠者專區</h1>
+    </header>
 
-<header>
-    <h1>受惠者專區</h1>
-</header>
+    <nav>
+        <a href="./index.html"><i class="fas fa-home"></i> 首頁</a>
+        <a href="./donor_page.html"><i class="fas fa-hand-holding-heart"></i> 捐款者專區</a>
+        <a href="./breakfast_store_page.html"><i class="fas fa-store"></i> 合作早餐店專區</a>
+    </nav>
 
-<div class="container">
-    <section class="intro">
-        <h2>如何參加早餐公益輔助計畫</h2>
-        <p>如果您需要每天一份免費早餐，您可以通過我們的合作早餐店領取餐點。我們的目標是確保每個人都能享用健康的早餐。</p>
-    </section>
+    <main>
+        <section class="section intro">
+            <h2><i class="fas fa-info-circle"></i> 如何參加早餐公益輔助計畫</h2>
+            <p>如果您需要每天一份免費早餐，您可以通過我們的合作早餐店領取餐點。我們的目標是確保每個人都能享用健康的早餐，開啟美好的一天。</p>
+        </section>
 
-    <section class="how-to-apply">
-        <h2>如何申請</h2>
-        <p>請前往任一合作早餐店，並掃描店內的二維碼註冊。我們將根據您的需求，為您提供每日的早餐服務。</p>
-    </section>
+        <section class="section how-to-apply">
+            <h2><i class="fas fa-clipboard-list"></i> 如何申請</h2>
+            <div class="step-by-step">
+                <div class="step">
+                    <i class="fas fa-map-marker-alt fa-2x"></i>
+                    <p>1. 找到離您最近的合作早餐店</p>
+                </div>
+                <div class="step">
+                    <i class="fas fa-qrcode fa-2x"></i>
+                    <p>2. 掃描店內的二維碼</p>
+                </div>
+                <div class="step">
+                    <i class="fas fa-user-plus fa-2x"></i>
+                    <p>3. 填寫簡單的註冊資料</p>
+                </div>
+                <div class="step">
+                    <i class="fas fa-check-circle fa-2x"></i>
+                    <p>4. 開始享用您的免費早餐</p>
+                </div>
+            </div>
+        </section>
 
-    <section class="locations">
-        <h2>合作早餐店位置</h2>
-        <ul>
-            <li>A早餐店 - 台北市中山區</li>
-            <li>B早餐店 - 台北市大安區</li>
-            <li>C早餐店 - 台北市信義區</li>
-        </ul>
-    </section>
-    <a href="./index.html">回首頁</a>
-</div>
+        <section class="section locations">
+            <h2><i class="fas fa-map-marked-alt"></i> 合作早餐店位置</h2>
+            <div class="store-list">
+                <div class="store-card">
+                    <h3>A早餐店</h3>
+                    <p><i class="fas fa-map-pin"></i> 台北市中山區中山北路二段45號</p>
+                    <p><i class="fas fa-clock"></i> 營業時間：06:00 - 11:00</p>
+                </div>
+                <div class="store-card">
+                    <h3>B早餐店</h3>
+                    <p><i class="fas fa-map-pin"></i> 台北市大安區忠孝東路四段170號</p>
+                    <p><i class="fas fa-clock"></i> 營業時間：05:30 - 10:30</p>
+                </div>
+                <div class="store-card">
+                    <h3>C早餐店</h3>
+                    <p><i class="fas fa-map-pin"></i> 台北市信義區松仁路100號</p>
+                    <p><i class="fas fa-clock"></i> 營業時間：06:30 - 11:30</p>
+                </div>
+            </div>
+        </section>
 
-<footer>
-    <p>© 2024 早餐公益輔助計畫. 保留所有權利。</p>
-</footer>
+        <section class="section testimonials">
+            <h2><i class="fas fa-quote-left"></i> 受惠者心得</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <p>"這個計畫真的幫助了我很多。現在我每天都能吃到營養豐富的早餐，感謝所有讓這個計畫成為可能的人！"</p>
+                    <p class="testimonial-author">- 小明, 學生</p>
+                </div>
+                <div class="testimonial">
+                    <p>"因為這個計畫，我不再需要擔心早餐的問題。這不僅僅是一份食物，更是一份溫暖的關懷。"</p>
+                    <p class="testimonial-author">- 阿姨, 清潔工人</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
+    <footer>
+        <p>© 2024 早餐公益輔助計畫. 保留所有權利。</p>
+        <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+    </footer>
 </body>
 </html>

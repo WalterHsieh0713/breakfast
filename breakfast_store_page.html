@@ -1,49 +1,80 @@
----
-layout: default
-title: 合作早餐店專區
----
-
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@jekyll-themes/architect@0.1.1/assets/css/style.css">
-    <title>早餐店合作夥伴 - 早餐公益輔助計畫</title>
+    <title>早餐公益輔助計畫 - 合作早餐店專區</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 </head>
 <body>
+    <header>
+        <h1><i class="fas fa-store"></i> 合作早餐店專區</h1>
+    </header>
 
-<header>
-    <h1>合作早餐店專區</h1>
-</header>
+    <nav>
+        <a href="./index.html"><i class="fas fa-home"></i> 首頁</a>
+        <a href="./donor_page.html"><i class="fas fa-hand-holding-heart"></i> 捐款者專區</a>
+        <a href="./beneficiary_page.html"><i class="fas fa-users"></i> 受惠者專區</a>
+    </nav>
 
-<div class="container">
-    <section class="intro">
-        <h2>成為我們的合作夥伴</h2>
-        <p>我們邀請早餐店加入早餐公益輔助計畫，幫助有需要的人享用免費早餐。參與計畫後，您的店鋪將獲得每月資金來提供免費餐點，並且能夠為社區做出貢獻。</p>
-    </section>
+    <main>
+        <section class="section intro">
+            <h2><i class="fas fa-handshake"></i> 成為我們的合作夥伴</h2>
+            <p>我們邀請早餐店加入早餐公益輔助計畫，幫助有需要的人享用免費早餐。參與計畫後，您的店鋪將獲得每月資金來提供免費餐點，並且能夠為社區做出貢獻。</p>
+        </section>
 
-    <section class="join-now">
-        <h2>立即加入</h2>
-        <a href="#" class="btn">申請成為合作夥伴</a>
-    </section>
+        <section class="section join-now">
+            <h2><i class="fas fa-plus-circle"></i> 立即加入</h2>
+            <a href="#" class="btn">申請成為合作夥伴</a>
+            <div class="benefits">
+                <div class="benefit">
+                    <i class="fas fa-money-bill-wave fa-2x"></i>
+                    <p>獲得每月資金支持</p>
+                </div>
+                <div class="benefit">
+                    <i class="fas fa-heart fa-2x"></i>
+                    <p>為社區做出貢獻</p>
+                </div>
+                <div class="benefit">
+                    <i class="fas fa-users fa-2x"></i>
+                    <p>擴大客戶群</p>
+                </div>
+            </div>
+        </section>
 
-    <section class="report">
-        <h2>資金使用報告</h2>
-        <p>請在每月結束前提交資金使用報告，以確保能夠持續收到支持資金。</p>
-    </section>
+        <section class="section report">
+            <h2><i class="fas fa-file-alt"></i> 資金使用報告</h2>
+            <p>請在每月結束前提交資金使用報告，以確保能夠持續收到支持資金。</p>
+            <a href="#" class="btn">提交報告</a>
+        </section>
 
-    <section class="faq">
-        <h2>常見問題</h2>
-        <p><strong>Q: 我們可以提供什麼樣的餐點？</strong></p>
-        <p>A: 您可以提供成本不超過50元的任何早餐選項，並且只需記錄每位受惠者每天的一次簽到。</p>
-    </section>
-    <a href="./index.html">回首頁</a>
-</div>
+        <section class="section faq">
+            <h2><i class="fas fa-question-circle"></i> 常見問題</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <h3>Q: 我們可以提供什麼樣的餐點？</h3>
+                    <p>A: 您可以提供成本不超過50元的任何早餐選項，並且只需記錄每位受惠者每天的一次簽到。</p>
+                </div>
+                <div class="accordion-item">
+                    <h3>Q: 如何加入計畫？</h3>
+                    <p>A: 請點擊上方的「申請成為合作夥伴」按鈕，填寫申請表格。我們的團隊會儘快與您聯繫。</p>
+                </div>
+                <div class="accordion-item">
+                    <h3>Q: 資金如何發放？</h3>
+                    <p>A: 資金將每月根據您提供的免費早餐數量進行結算，並直接轉入您指定的帳戶。</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
-<footer>
-    <p>© 2024 早餐公益輔助計畫. 保留所有權利。</p>
-</footer>
-
+    <footer>
+        <p>© 2024 早餐公益輔助計畫. 保留所有權利。</p>
+        <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+    </footer>
 </body>
 </html>
